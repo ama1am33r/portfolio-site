@@ -1,0 +1,237 @@
+:root {
+  --navy: #15151f;
+  --cream: #f0e6d2;
+  --red: #e0472c;
+  --blue: #2d4fce;
+  --gold: #d8b23c;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: #000000;
+  color: var(--cream);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.site-header {
+  background-color: var(--gold);
+  color: var(--navy);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.3rem;
+}
+
+.navbar {
+  margin-bottom: 0.8rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* CHANGED: lets the links wrap on small screens instead of overflowing */
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.nav-link {
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--red);
+}
+
+.header-name {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 900;
+}
+
+.highlight-red {
+  color: var(--red);
+}
+
+.highlight-blue {
+  color: var(--blue);
+}
+
+.highlight-gold {
+  color: var(--gold);
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 0.2rem;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  border-bottom: 4px solid;
+  padding-bottom: 0.4rem;
+  max-width: fit-content;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+.section-title.red {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.section-title.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.section-title.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.section-title.navy {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.job h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.job-company {
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skills-list li {
+  background-color: var(--red);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.project-card {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.site-footer {
+  background-color: var(--navy);
+  color: var(--cream);
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Page transitions */
+.page {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* CHANGED: was just .page-exit, which was overridden by .page.fade-in so the exit fade never showed */
+.page.page-exit {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* CHANGED: Contact page - larger text and readable links on the black background */
+.contact-info {
+  font-size: 1.3rem;
+}
+
+.contact-info a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  color: var(--red);
+}
